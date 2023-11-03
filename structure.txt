@@ -1,0 +1,47 @@
+factory/
+│
+├── python-sim/                     # Python device simulator that publishes events to Kafka
+│   ├── src/
+│   │   └── main.py                 # Main script for the simulator
+│   ├── Dockerfile                  # Dockerfile for building the simulator container
+│   └── requirements.txt            # Python dependencies
+│
+├── java-api/                       # Java Web API that listens to Kafka events
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/example/api/
+│   │   │   │   └── ...             # Java source files
+│   │   │   └── resources/
+│   │   │       └── application.properties # Resource files
+│   │   └── test/
+│   ├── Dockerfile                  # Dockerfile for building the Java API container
+│   ├── pom.xml                     # Maven configuration file for Java dependencies
+│   └── .mvn/                       # Maven wrapper directory
+│       └── ...
+│
+├── react-ui/                       # React frontend application
+│   ├── public/
+│   │   └── ...                     # Public files for React app
+│   ├── src/
+│   │   └── ...                     # React source files
+│   ├── Dockerfile                  # Dockerfile for building the React app container
+│   ├── package.json                # npm package file for React dependencies
+│   ├── package-lock.json           # Lockfile for npm dependencies
+│   └── .env                        # Environment variables for React app
+│
+├── kafka/                          # Kafka deployment configurations
+│   ├── kafka-deployment.yaml       # Kafka deployment YAML for Kubernetes
+│   └── kafka-service.yaml          # Kafka service YAML for exposing Kafka
+│
+├── postgres/                       # PostgreSQL deployment configurations
+│   ├── pg-deployment.yaml          # PostgreSQL deployment YAML for Kubernetes
+│   └── pg-service.yaml             # PostgreSQL service YAML for exposing PG
+│
+├── k8s/                            # General Kubernetes manifests
+│   ├── python-sim-deployment.yaml  # Deployment for the Python simulator
+│   ├── java-api-deployment.yaml    # Deployment for the Java API
+│   ├── react-ui-deployment.yaml    # Deployment for the React UI
+│   ├── ingress.yaml                # Ingress to expose the Java API and React UI
+│   └── namespace.yaml              # Namespace definition for Kubernetes
+│
+└── docker-compose.yml              # Docker-Compose for local testing (optional)
