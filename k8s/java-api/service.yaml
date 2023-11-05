@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: java-api-service
+spec:
+  selector:
+    app: java-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080 # The container port
+  type: LoadBalancer
